@@ -1,6 +1,8 @@
-import { User } from '../activeUser/types';
+import { ThunkAction } from 'redux-thunk';
+import { User } from '../users/types';
+import { ApplicationState } from '../configureStore';
 
-// Action types
+// Actions types
 export const FETCH_TRADES = 'FETCH_TRADES'
 export const UPDATE_TRADES = 'UPDATE_TRADES'
 export const CHECK_TRADE_CHAT = 'CHECK_TRADE_CHAT'
@@ -25,33 +27,30 @@ export type TradesActionTypes =
   UpdateTradesAction |
   ReleaseBitcoinAction;
 
+// Action creators types
+export type FetchTradesActionCreator = ThunkAction<Promise<UpdateTradesAction>, ApplicationState, null, UpdateTradesAction>
+export type ReleaseBitcoinActionCreator = ThunkAction<Promise<ReleaseBitcoinAction>, ApplicationState, null, ReleaseBitcoinAction>
+
 // State types
 export interface TradesState {
   isFetching: boolean;
   activeTradeId: number | null;
-  list: Trade[];
+  list: Trade[] | [];
   input: string
 }
 
 export interface Trade {
   id: number;
   tradingWith: User;
-  paymentMethodId: number;
+  paymentMethod: string;
   paidStatus: boolean;
-  currencyId: number;
-  amountCurrency: number;
-  amountBitcoin: number;
+  tradeStatus: string
+  currency: string;
+  currencyAmount: number;
+  cryptocurrency: string;
+  cryptocurrencyAmount: number;
   chatId: number;
+  chatNotification: boolean;
   createdAt: Date;
   hash: string;
-}
-
-export interface PaymentMethod {
-  id: number;
-  name: string;
-}
-
-export interface Currency {
-  id: number;
-  name: string;
 }

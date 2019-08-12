@@ -1,4 +1,4 @@
-// Action types
+// Actions types
 export const SET_ACTIVE_USER = 'SET_ACTIVE_USER'
 
 interface SetActiveUserAction {

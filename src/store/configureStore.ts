@@ -4,7 +4,7 @@ import thunk from 'redux-thunk';
 
 import { tradesReducer } from './trades/reducer';
 import { chatReducer } from './chat/reduser';
-import { activeUserReducer } from './activeUser/reducer';
+import { activeUserReducer } from './users/reducer';
 
 const rootReducer = combineReducers({
   trades: tradesReducer,

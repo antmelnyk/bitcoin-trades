@@ -4,7 +4,15 @@ import {
   SET_ACTIVE_USER
 } from './types';
 
-const initialState: UserState = null
+// Let's assume user is logged in for the sake of test task
+const initialState: UserState = {
+  id: 2451,
+  login: 'MrSeller',
+  positiveReputation: 34,
+  negativeReputation: 0,
+  tradesCounter: 4,
+  avatar: ''
+}
 
 export function activeUserReducer(
   state = initialState,

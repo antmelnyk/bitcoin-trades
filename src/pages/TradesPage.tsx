@@ -1,11 +1,16 @@
 import React from 'react';
 
+import TradesList from '../components/TradesList'
 import TradePanel from '../components/TradePanel'
-import { IProps } from '../components/TradePanel/types';
+import { IProps as ITradesList } from '../components/TradesList/types';
+import { IProps as ITradePanel } from '../components/TradePanel/types';
 
-const TradesPage = (props: IProps) => {
+type ITradesPage = ITradePanel | ITradesList
+
+const TradesPage = (props: ITradesPage) => {
   return (
-    <div className='trades-page'>
+    <div className='page'>
+      <TradesList {...props} />
       <TradePanel {...props} />
     </div>
   )

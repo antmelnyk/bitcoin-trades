@@ -1,4 +1,6 @@
-// Action types
+import { User } from '../users/types';
+
+// Actions types
 export const CONNECT_WEBSOCKET = 'CONNECT_WEBSOCKET'
 export const SEND_MESSAGE = 'SEND_MESSAGE'
 export const RECEIVE_MESSAGE = 'RECEIVE_MESSAGE'
@@ -32,5 +34,5 @@ export interface ChatState {
 export interface Message {
   id: number;
   text: string;
-  author_id: number;
+  author: User;
 }

@@ -1,2 +1,2 @@
-import TradesPanel from './TradePanel.container'
-export default TradesPanel
+import TradePanel from './TradePanel.container'
+export default TradePanel

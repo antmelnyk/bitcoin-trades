@@ -1,14 +1,16 @@
-import { Dispatch, bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { ApplicationState } from '../../store/configureStore';
 
 import TradePanel from './TradePanel';
 
-import { StateProps } from './types';
+import { IDispatchProps, IStateProps } from './types';
 import { selectTradeById } from '../../store/trades/selectors';
 import { releaseBitcoin } from '../../store/trades/actions';
 
-export const mapState = (state: ApplicationState): StateProps => {
+import CSSModules from 'react-css-modules';
+import styles from './TradePanel.scss';
+
+export const mapState = (state: ApplicationState): IStateProps => {
 
   if (state.trades.activeTradeId) {
     const trade = selectTradeById(state, state.trades.activeTradeId);
@@ -21,11 +23,14 @@ export const mapState = (state: ApplicationState): StateProps => {
 
 }
 
-export const mapDispatch = {
-  releaseBitcoin
+const mapDispatch = (): IDispatchProps => {
+  return {
+    releaseBitcoin: () => releaseBitcoin()
+  }
 }
 
-export default connect(
-  mapState,
-  mapDispatch
-)(TradePanel);
+export default connect<
+  IStateProps,
+  IDispatchProps,
+  null
+  >(mapState, mapDispatch)(CSSModules(TradePanel, styles))

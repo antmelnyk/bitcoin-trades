@@ -1,0 +1,76 @@
+$light-grey: rgb(201, 201, 201);
+$medium-grey: rgb(109, 109, 109);
+$dark-grey: rgb(24, 24, 24);
+$notification-color: rgb(0, 202, 192);
+
+.trade-item {
+  display: flex;
+  padding: 20px;
+}
+
+.trade-chat-notification {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+
+  &-unread {
+    composes: trade-chat-notification;
+    background: $notification-color;
+  }
+
+  &-read {
+    composes: trade-chat-notification;
+    background: $light-grey;
+  }
+}
+
+.trade-info {
+  margin-left: 10px;
+}
+
+.trading-with-status {
+  margin-bottom: 15px;
+}
+
+.user-login {
+  color: $light-grey;
+}
+
+.user-status {
+  font-weight: 600;
+  color: $medium-grey;
+}
+
+.payment-method {
+  color: $dark-grey
+}
+
+.money-values {
+  display: flex;
+  color: $light-grey;
+}
+
+.currency {
+  margin-right: 5px;
+}
+
+.trade-status {
+  display: block;
+}
+
+.trading-with-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.paid-status {
+  
+  &-paid {
+    color: $medium-grey;
+  }
+
+  &-not-paid {
+    color: $notification-color;
+  }
+}

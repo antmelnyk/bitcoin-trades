@@ -1,26 +1,19 @@
-import { ActionCreator, Dispatch } from 'redux';
-import { ThunkAction } from 'redux-thunk';
+import { Dispatch, ActionCreator } from 'redux';
 
 import { 
   FetchTradesAction,
   UpdateTradesAction,
+  FetchTradesActionCreator,
   ReleaseBitcoinAction,
+  ReleaseBitcoinActionCreator,
   FETCH_TRADES,
   UPDATE_TRADES,
-  RELEASE_BITCOIN,
-  Trade
+  RELEASE_BITCOIN
 } from './types';
 
 import API from '../../services/api/api';
 
-export const fetchTrades: ActionCreator<
-  ThunkAction<
-    Promise<UpdateTradesAction>,
-    Trade[],
-    null,
-    UpdateTradesAction
-  >
-> = () => {
+export const fetchTrades: ActionCreator<FetchTradesActionCreator> = () => {
   return async (dispatch: Dispatch) => {
 
     const fetchTrades: FetchTradesAction = {
@@ -39,14 +32,7 @@ export const fetchTrades: ActionCreator<
   }
 }
 
-export const releaseBitcoin: ActionCreator<
-  ThunkAction<
-    Promise<ReleaseBitcoinAction>,
-    null,
-    null,
-    ReleaseBitcoinAction
-  >
-> = (tradeId: number) => {
+export const releaseBitcoin: ActionCreator<ReleaseBitcoinActionCreator> = (tradeId: number) => {
   return async (dispatch: Dispatch) => {
 
     const releaseBitcoin: ReleaseBitcoinAction = {
