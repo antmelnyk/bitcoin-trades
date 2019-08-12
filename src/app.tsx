@@ -7,6 +7,8 @@ import { store } from './store/configureStore';
 
 import TradesPage from './pages/TradesPage';
 
+import '../assets/global.scss';
+
 const App = () => (
   <Provider store={store}>
     <Router>
