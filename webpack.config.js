@@ -27,7 +27,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.css$/,
+        test: /\.(sa|sc|c)ss$/,
         use: [
           {
             loader: 'style-loader'
@@ -43,6 +43,15 @@ module.exports = {
                 localIdentName: '[name]__[local]--[hash:base64:5]'
               },
               sourceMap: true
+            }
+          },
+          {
+            loader: 'postcss-loader'
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              implementation: require('sass')
             }
           }
         ]
