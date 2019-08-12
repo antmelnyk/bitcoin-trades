@@ -25,6 +25,27 @@ module.exports = {
             loader: 'ts-loader'
           }
         ]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-modules-typescript-loader'
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              modules: {
+                localIdentName: '[name]__[local]--[hash:base64:5]'
+              },
+              sourceMap: true
+            }
+          }
+        ]
       }
     ]
   },
