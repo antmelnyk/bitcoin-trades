@@ -4,6 +4,7 @@ interface CssExports {
   'currency': string;
   'link': string;
   'money-values': string;
+  'paid-status': string;
   'paid-status-not-paid': string;
   'paid-status-paid': string;
   'payment-method': string;
