@@ -4,7 +4,4 @@ export interface IStateProps {
   trade: Trade;
 }
 
-export interface IDispatchProps {
-}
-
-export type IProps = IStateProps & IDispatchProps
+export type IProps = IStateProps

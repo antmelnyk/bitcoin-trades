@@ -1,26 +1,24 @@
-import React, { useEffect, FunctionComponent } from 'react';
+import React, { useEffect } from 'react';
 import { IProps } from './types';
 
 import TradeItem from './TradeItem';
-import Spinner from '../Spinner';
 
-const TradesList: FunctionComponent<IProps> = (props: IProps) => {
+const TradesList: React.FC<IProps> = (props: IProps) => {
 
   useEffect(() => {    
-    props.fetchTrades();
+    props.actions.fetchTrades();
   }, []);
 
   if (props.list.length > 0) {
     return (
       <div styleName='trades-list'>
-        {props.list.map(trade => <TradeItem trade={trade} key={trade.id} /> )}
+        {props.list.map(trade => <TradeItem trade={trade} key={trade.hash} /> )}
       </div>
     )
   }
   
   return (
     <div styleName='trades-list'>
-      <Spinner isSpinning={props.isFetching} />
     </div>
   )
 }

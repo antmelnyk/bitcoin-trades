@@ -1,8 +1,7 @@
+import { Dispatch, bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { ThunkDispatch } from 'redux-thunk';
 import { ApplicationState } from '../../store/configureStore';
 import { IDispatchProps, IStateProps } from './types';
-import { FetchTradesAction } from '../../store/trades/types';
 import { fetchTrades } from '../../store/trades/actions';
 
 import CSSModules from 'react-css-modules';
@@ -17,14 +16,13 @@ export const mapState = (state: ApplicationState): IStateProps => {
   }
 }
 
-const mapDispatch = (dispatch: ThunkDispatch<ApplicationState, null, FetchTradesAction>): IDispatchProps => {
-  return {
-    fetchTrades: () => dispatch(fetchTrades())
-  }
-}
+const mapDispatch = (dispatch: Dispatch): IDispatchProps => ({
+  actions: bindActionCreators({ fetchTrades }, dispatch)
+});
 
 export default connect<
   IStateProps,
   IDispatchProps,
-  null
+  null,
+  ApplicationState
 >(mapState, mapDispatch)(CSSModules(TradesList, styles))

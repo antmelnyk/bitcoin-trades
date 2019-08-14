@@ -5,15 +5,14 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import { store } from './store/configureStore';
 
-import TradesPage from './pages/TradesPage';
+import TradesPage from './pages/TradesPage/TradesPage';
 
 import '../assets/global.scss';
 
 const App = () => (
   <Provider store={store}>
     <Router>
-      <Route exact path={`/`} component={TradesPage} />
-      {/* <Route path={`/trades/:hash`} component={TradePanel} /> */}
+      <Route path={`/trades/`} component={TradesPage} />
     </Router>
   </Provider>
 )

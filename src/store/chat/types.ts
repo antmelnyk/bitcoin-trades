@@ -24,7 +24,6 @@ export type ChatActionTypes =
 
 // State types
 export interface ChatState {
-  tradeId: null | number;
   isFetching: boolean;
   isSending: boolean;
   messages: Message[];

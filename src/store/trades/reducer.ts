@@ -2,14 +2,15 @@ import {
   TradesState,
   TradesActionTypes,
   FETCH_TRADES,
-  UPDATE_TRADES
+  FETCH_TRADE,
+  UPDATE_TRADES,
+  UPDATE_ACTIVE_TRADE
 } from './types';
 
 const initialState: TradesState = {
   isFetching: false,
-  activeTradeId: null,
   list: [],
-  input: ''
+  activeTrade: null
 } 
 
 export function tradesReducer(
@@ -25,10 +26,26 @@ export function tradesReducer(
       }
     }
 
+    case FETCH_TRADE: {
+      return {
+        ...state,
+        activeTrade: null
+      }
+    }
+
+    case UPDATE_ACTIVE_TRADE: {
+      return {
+        ...state,
+        activeTrade: action.activeTrade
+      }
+    }
+    
+
     case UPDATE_TRADES: {
       return {
         ...state,
-        list: action.trades
+        list: action.trades,
+        isFetching: false
       }
     }
 

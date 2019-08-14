@@ -2,7 +2,6 @@ import { Trade } from '../../store/trades/types';
 
 export const tradesData: Trade[] = [
   {
-    id: 0,
     tradingWith: {
       id: 213,
       login: 'Chanaar',
@@ -21,10 +20,9 @@ export const tradesData: Trade[] = [
     chatId: 0,
     chatNotification: true,
     createdAt: new Date(),
-    hash: '138f211a423d57ce71665e2e024fc9a5'
+    hash: '9cF2011'
   },
   {
-    id: 1,
     tradingWith: {
       id: 232,
       login: 'Robert',
@@ -43,6 +41,6 @@ export const tradesData: Trade[] = [
     chatId: 1,
     chatNotification: false,
     createdAt: new Date(),
-    hash: '231df2wefw3df23rd3'
+    hash: '43j341s'
   }
 ]

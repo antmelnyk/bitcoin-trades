@@ -7,7 +7,6 @@ import {
 } from './types';
 
 const initialState: ChatState = {
-  tradeId: null,
   isFetching: false,
   isSending: false,
   messages: [],

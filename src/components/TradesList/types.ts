@@ -1,5 +1,5 @@
-import { Trade, UpdateTradesAction } from '../../store/trades/types';
-import { RouteComponentProps } from 'react-router-dom';
+import { ActionCreator } from 'redux';
+import { Trade, FetchTradesActionCreator } from '../../store/trades/types';
 
 export interface IStateProps {
   list: Trade[];
@@ -7,12 +7,9 @@ export interface IStateProps {
 }
 
 export interface IDispatchProps {
-  fetchTrades: () => Promise<UpdateTradesAction>
+  actions: {
+    fetchTrades: ActionCreator<FetchTradesActionCreator>
+  }
 }
-
-// export interface IRouterProps {
-// }
-
-// export type IProps = IStateProps & IDispatchProps & RouteComponentProps<IRouterProps> 
 
 export type IProps = IStateProps & IDispatchProps

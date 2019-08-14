@@ -2,6 +2,7 @@
 // Please do not change this file!
 interface CssExports {
   'currency': string;
+  'link': string;
   'money-values': string;
   'paid-status-not-paid': string;
   'paid-status-paid': string;
