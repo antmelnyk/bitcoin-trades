@@ -14,12 +14,12 @@ export const tradesData: Trade[] = [
     paidStatus: false,
     tradeStatus: 'is buying',
     currency: 'USD',
-    currencyAmount: 25,
+    currencyAmount: 25.01,
     cryptocurrency: 'BTC',
     cryptocurrencyAmount: 0.00234,
     chatId: 0,
     chatNotification: true,
-    createdAt: new Date(),
+    createdAt: new Date('August 14, 2019 11:20:25'),
     hash: '9cF2011'
   },
   {
@@ -40,7 +40,7 @@ export const tradesData: Trade[] = [
     cryptocurrencyAmount: 0.00094,
     chatId: 1,
     chatNotification: false,
-    createdAt: new Date(),
+    createdAt: new Date('August 13, 2019 20:22:25'),
     hash: '43j341s'
   }
 ]
