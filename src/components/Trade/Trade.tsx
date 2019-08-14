@@ -31,7 +31,6 @@ const Trade: React.FC<IProps> = (props: IProps) => {
       </div>
     )
   }
-
   
 }
 

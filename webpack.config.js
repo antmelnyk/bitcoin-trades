@@ -1,5 +1,6 @@
 var path = require('path')
 var HTMLWebpackPlugin = require('html-webpack-plugin');
+var CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
 
@@ -55,6 +56,10 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: ['file-loader']
       }
     ]
   },
@@ -63,7 +68,10 @@ module.exports = {
     new HTMLWebpackPlugin({
       template: './src/index.html',
       filename: './index.html'
-    })
+    }),
+    new CopyPlugin([
+      { from: 'assets/images', to: 'dist/images' }
+    ])
   ],
 
   devtool: 'source-map',

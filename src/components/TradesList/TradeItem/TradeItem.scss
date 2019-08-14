@@ -54,7 +54,7 @@ $notification-color: rgb(0, 202, 192);
 }
 
 .payment-method {
-  margin-bottom: 2px;
+  margin-bottom: 4px;
   font-size: 18px;
   color: $dark-grey
 }
@@ -73,9 +73,11 @@ $notification-color: rgb(0, 202, 192);
 }
 
 .trading-with-avatar {
-  width: 40px;
-  height: 40px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
+  background-size: cover;
+  background-position: center;
 }
 
 .paid-status {

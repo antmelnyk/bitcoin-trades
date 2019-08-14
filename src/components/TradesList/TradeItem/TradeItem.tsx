@@ -10,6 +10,10 @@ const TradeItem: React.FC<IProps> = (props: IProps) => {
   const { tradingWith, tradeStatus, paymentMethod, currencyAmount, 
     currency, cryptocurrencyAmount, cryptocurrency, paidStatus, chatNotification, hash } = props.trade;
     
+  const avatar = {
+    backgroundImage: `url(/images/${tradingWith.avatar})`
+  }
+  
   return (
     <Link to={`/trades/${hash}`} styleName='link'>
       <div styleName='trade-item'>
@@ -33,8 +37,7 @@ const TradeItem: React.FC<IProps> = (props: IProps) => {
           </div>
         </div>
         <div styleName='trade-status'>
-          <div styleName='trading-with-avatar'>
-            {tradingWith.avatar}
+          <div styleName='trading-with-avatar' style={avatar}>
           </div>
           <div styleName={`paid-status-${paidStatus ? 'paid' : 'not-paid'}`}>
             {paidStatus ? 'Paid': 'Not paid'}

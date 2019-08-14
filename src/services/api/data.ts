@@ -8,7 +8,7 @@ export const tradesData: Trade[] = [
       positiveReputation: 23,
       negativeReputation: 1,
       tradesCounter: 1,
-      avatar: ''
+      avatar: 'user2.jpg'
     },
     paymentMethod: 'Steam Gift Card',
     paidStatus: false,
@@ -29,7 +29,7 @@ export const tradesData: Trade[] = [
       positiveReputation: 45,
       negativeReputation: 2,
       tradesCounter: 3,
-      avatar: ''
+      avatar: 'user1.jpg'
     },
     paymentMethod: 'Amazon Gift Card',
     paidStatus: true,
