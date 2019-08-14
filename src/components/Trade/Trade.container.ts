@@ -7,6 +7,8 @@ import { ApplicationState } from '../../store/configureStore';
 import { IDispatchProps, IStateProps, IRouterProps } from './types';
 import { fetchTrade } from '../../store/trades/actions';
 
+import CSSModules from 'react-css-modules';
+import styles from './Trade.scss';
 
 export const mapState = (state: ApplicationState): IStateProps => {
   return {
@@ -23,6 +25,6 @@ const ConnectedComponent: React.ComponentType<IRouterProps> = connect<
   IDispatchProps,
   IRouterProps,
   ApplicationState
->(mapState, mapDispatch)(Trade)
+>(mapState, mapDispatch)(CSSModules(Trade, styles))
 
 export default ConnectedComponent

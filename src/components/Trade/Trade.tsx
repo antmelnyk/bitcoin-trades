@@ -13,20 +13,20 @@ const Trade: React.FC<IProps> = (props: IProps) => {
 
   if(props.trade) {
     return (
-      <div>
+      <>
         <TradeChat paymentMethod={props.trade.paymentMethod} tradingWith={props.trade.tradingWith} />
         <TradePanel trade={props.trade} />
-      </div>
+      </>
     )
   } else if (props.trade == null) {
     return (
-      <div>
+      <div styleName='trade-is-fetching'>
         <Spinner isSpinning={true} />
       </div>
     )
   } else {
     return (
-      <div>
+      <div styleName='trade-not-found'>
         No trade found
       </div>
     )

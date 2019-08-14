@@ -1,16 +1,102 @@
-.no-trade-selected {
-  background: red;
-}
+$light-grey: rgb(185, 185, 185);
+$medium-grey: rgb(138, 138, 138);
+$dark-grey: rgb(59, 59, 59);
+$accent-color: rgb(1, 216, 152);
 
 .trade-info {
-background: red;
+  box-sizing: border-box;
+  width: 320px;
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 16px;
+  background: white;
+  color: $dark-grey;
+  box-shadow: -10px 0 25px 2px rgba(136, 136, 136, 0.4);
 }
 
-
 .description {
-background: red;
+  font-size: 20px;
+  color: $dark-grey;
+}
+
+.trading-with {
+  font-weight: 700;
 }
 
 .time {
-background: red;
+  color: $light-grey;
+}
+
+.action-release-cryptocurrency {
+  display: inline-block;
+  margin: 25px 0;
+  padding: 8px 25px;
+  background: $accent-color;
+  border: 2px solid rgba(0, 0, 0, 0.05);
+  border-radius: 40px;
+  color: white;
+  font-size: 22px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: 0.25s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.info-blocks {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.block {
+  width: calc(100% / 2);
+  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.block-title {
+  margin-bottom: 7px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.reputation-positive {
+  color: rgb(104, 228, 2);
+  margin-right: 5px;
+  font-weight: 700;
+}
+
+.reputation-negative {
+  color: rgb(224, 0, 0);
+  margin-left: 3px;
+  font-weight: 700;
+}
+
+.block-user-trades-counter {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.block-status-value {
+  text-transform: uppercase;
+
+  &-paid {
+    color: $accent-color;
+  }
+
+  &-not-paid {
+    color: $medium-grey;
+  }
+}
+
+.block-amount-currency-value {
+  color: $dark-grey;
+}
+
+.block-amount-cryptocurrency-value, .block-hash-value {
+  color: $light-grey;
 }

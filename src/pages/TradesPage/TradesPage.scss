@@ -1,3 +1,7 @@
 .no-trade-selected {
-  background: red;
+  flex-grow: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
 }

@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { IProps } from './types';
 
+import UserAvatar from '../../UserAvatar';
+
 import CSSModules from 'react-css-modules';
 import styles from './TradeItem.scss';
 
@@ -9,10 +11,6 @@ const TradeItem: React.FC<IProps> = (props: IProps) => {
 
   const { tradingWith, tradeStatus, paymentMethod, currencyAmount, 
     currency, cryptocurrencyAmount, cryptocurrency, paidStatus, chatNotification, hash } = props.trade;
-    
-  const avatar = {
-    backgroundImage: `url(/images/${tradingWith.avatar})`
-  }
   
   return (
     <Link to={`/trades/${hash}`} styleName='link'>
@@ -29,7 +27,7 @@ const TradeItem: React.FC<IProps> = (props: IProps) => {
           </div>
           <div styleName='money-values'>
             <span styleName='currency'>
-              {currencyAmount} {currency}
+              {Math.round(currencyAmount)} {currency}
             </span>
             <span>
               ({cryptocurrencyAmount} {cryptocurrency})
@@ -37,8 +35,7 @@ const TradeItem: React.FC<IProps> = (props: IProps) => {
           </div>
         </div>
         <div styleName='trade-status'>
-          <div styleName='trading-with-avatar' style={avatar}>
-          </div>
+          <UserAvatar avatar={tradingWith.avatar} />
           <div styleName={`paid-status-${paidStatus ? 'paid' : 'not-paid'}`}>
             {paidStatus ? 'Paid': 'Not paid'}
           </div>

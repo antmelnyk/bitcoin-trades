@@ -4,7 +4,8 @@ import {
   FETCH_TRADES,
   FETCH_TRADE,
   UPDATE_TRADES,
-  UPDATE_ACTIVE_TRADE
+  UPDATE_ACTIVE_TRADE,
+  RELEASE_BITCOIN
 } from './types';
 
 const initialState: TradesState = {
@@ -47,6 +48,11 @@ export function tradesReducer(
         list: action.trades,
         isFetching: false
       }
+    }
+
+    case RELEASE_BITCOIN: {
+      // Something happens
+      return state
     }
 
     default:

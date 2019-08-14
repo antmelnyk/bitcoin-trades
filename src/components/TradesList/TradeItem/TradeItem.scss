@@ -10,6 +10,7 @@ $notification-color: rgb(0, 202, 192);
 .trade-item { 
   display: flex;
   padding: 20px;
+  transition: 0.25s ease;
 
   &:hover {
     background: rgb(248, 248, 248);
