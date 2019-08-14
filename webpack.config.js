@@ -1,6 +1,7 @@
 var path = require('path')
 var HTMLWebpackPlugin = require('html-webpack-plugin');
 var CopyPlugin = require('copy-webpack-plugin');
+var MomentLocalesPlugin = require('moment-locales-webpack-plugin')
 
 module.exports = {
 
@@ -71,7 +72,9 @@ module.exports = {
     }),
     new CopyPlugin([
       { from: 'assets/images', to: 'dist/images' }
-    ])
+    ]),
+    // To strip all moment.js locales except EN
+    new MomentLocalesPlugin()
   ],
 
   devtool: 'source-map',
