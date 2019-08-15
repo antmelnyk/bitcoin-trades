@@ -9,7 +9,7 @@ interface SetActiveUserAction {
 export type UserActionTypes = SetActiveUserAction;
 
 // State types
-export type UserState = User | null;
+export type UserState = User & ActiveUser | null;
 
 export interface User {
   id: number;
@@ -18,4 +18,8 @@ export interface User {
   negativeReputation: number;
   tradesCounter: number;
   avatar: string;
+}
+
+export interface ActiveUser {
+  undreadTradeChats: number[];
 }

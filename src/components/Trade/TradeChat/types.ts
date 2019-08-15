@@ -1,12 +1,9 @@
 import { ActionCreator } from 'redux';
-import { Message } from '../../../store/chat/types';
-import { User } from '../../../store/users/types';
-import { DeleteTradeActionCreator } from '../../../store/trades/types';
+import { Message, FetchChatActionCreator } from '../../../store/chat/types';
+import { Trade, DeleteTradeActionCreator } from '../../../store/trades/types';
 
 export interface IOwnProps {
-  paymentMethod: string;
-  tradingWith: User;
-  hash: string;
+  trade: Trade;
 }
 
 export interface IStateProps {
@@ -15,7 +12,8 @@ export interface IStateProps {
 
 export interface IDispatchProps {
   actions: {
-    deleteTrade: ActionCreator<DeleteTradeActionCreator>
+    deleteTrade: ActionCreator<DeleteTradeActionCreator>,
+    fetchChat: ActionCreator<FetchChatActionCreator>
   }
 }
 

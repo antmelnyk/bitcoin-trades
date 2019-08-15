@@ -11,7 +11,8 @@ const initialState: UserState = {
   positiveReputation: 34,
   negativeReputation: 0,
   tradesCounter: 4,
-  avatar: ''
+  avatar: '',
+  undreadTradeChats: []
 }
 
 export function activeUserReducer(
@@ -23,10 +24,6 @@ export function activeUserReducer(
     return state
   } else {
     switch (action.type) {
-
-      case SET_ACTIVE_USER: {
-        return action.activeUser
-      }
 
       default:
         return state

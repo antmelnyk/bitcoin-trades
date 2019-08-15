@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { IProps } from './types';
 
 const TradeChat: React.FC<IProps> = (props: IProps) => {
 
-  const { tradingWith, paymentMethod, hash, messages } = props;
+  const { tradingWith, paymentMethod, hash, chatId } = props.trade;
   
+  useEffect(() => {
+    props.actions.fetchChat(chatId);
+  }, []);
+
   function handleTradeDeleting() {
     props.actions.deleteTrade(hash);
   }
@@ -28,7 +32,7 @@ const TradeChat: React.FC<IProps> = (props: IProps) => {
     <div styleName='trade-chat'>
       {header}
 
-      {messages.map(message =>
+      {props.messages.map(message =>
         <div key={message.id}>{message.text}</div>
       )}
     </div>

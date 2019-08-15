@@ -1,9 +1,10 @@
 import {
   ChatState,
   ChatActionTypes,
-  CONNECT_WEBSOCKET,
   SEND_MESSAGE,
-  RECEIVE_MESSAGE
+  RECEIVE_MESSAGE,
+  FETCH_CHAT,
+  UPDATE_CHAT
 } from './types';
 
 const initialState: ChatState = {
@@ -19,9 +20,14 @@ export function chatReducer(
 ): ChatState {
   switch (action.type) {
 
-    case CONNECT_WEBSOCKET: {
+    case FETCH_CHAT: {
+      return state;
+    }
+
+    case UPDATE_CHAT: {
       return {
-        ...state
+        ...state,
+        messages: action.messages
       }
     }
 
