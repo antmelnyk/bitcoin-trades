@@ -12,7 +12,6 @@ import styles from './TradeChat.scss';
 
 export const mapState = (state: ApplicationState): IStateProps => {
   return {
-    isFetching: state.chat.isFetching,
     messages: state.chat.messages
   }
 }

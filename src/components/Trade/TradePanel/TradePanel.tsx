@@ -32,7 +32,7 @@ const TradePanel: React.FC<IProps> = (props: IProps) => {
           </div>
           <div>
             <span styleName='reputation-positive'>+{tradingWith.positiveReputation}</span>
-            /
+            <span>/</span>
             <span styleName='reputation-negative'>-{tradingWith.negativeReputation}</span>
           </div>
         </div>

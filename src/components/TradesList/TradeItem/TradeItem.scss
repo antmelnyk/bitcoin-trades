@@ -1,7 +1,7 @@
 $light-grey: rgb(185, 185, 185);
 $medium-grey: rgb(138, 138, 138);
 $dark-grey: rgb(24, 24, 24);
-$notification-color: rgb(0, 202, 192);
+$accent-color: rgb(1, 216, 152);
 
 .link {
   text-decoration: none;
@@ -26,7 +26,7 @@ $notification-color: rgb(0, 202, 192);
 
   &-unread {
     composes: trade-chat-notification;
-    background: $notification-color;
+    background: $accent-color;
   }
 
   &-read {
@@ -90,7 +90,7 @@ $notification-color: rgb(0, 202, 192);
 
   &-paid {
     composes: paid-status;
-    color: $notification-color;
+    color: $accent-color;
     
   }
 

@@ -14,7 +14,11 @@ const Trade: React.FC<IProps> = (props: IProps) => {
   if(props.trade) {
     return (
       <>
-        <TradeChat paymentMethod={props.trade.paymentMethod} tradingWith={props.trade.tradingWith} />
+        <TradeChat 
+          hash={props.trade.hash}
+          paymentMethod={props.trade.paymentMethod}
+          tradingWith={props.trade.tradingWith}
+        />
         <TradePanel trade={props.trade} />
       </>
     )

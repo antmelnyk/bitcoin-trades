@@ -57,10 +57,6 @@ module.exports = {
             }
           }
         ]
-      },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: ['file-loader']
       }
     ]
   },
@@ -71,7 +67,10 @@ module.exports = {
       filename: './index.html'
     }),
     new CopyPlugin([
-      { from: 'assets/images', to: 'dist/images' }
+      { 
+        from: path.resolve(__dirname, 'assets/images'),
+        to: path.resolve(__dirname, 'dist/images')
+      }
     ]),
     // To strip all moment.js locales except EN
     new MomentLocalesPlugin()

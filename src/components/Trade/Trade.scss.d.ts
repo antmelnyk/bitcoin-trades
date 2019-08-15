@@ -2,6 +2,8 @@
 // Please do not change this file!
 interface CssExports {
   'trade': string;
+  'trade-is-fetching': string;
+  'trade-not-found': string;
 }
 declare var cssExports: CssExports;
 export = cssExports;

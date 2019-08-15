@@ -6,10 +6,10 @@ import { DeleteTradeActionCreator } from '../../../store/trades/types';
 export interface IOwnProps {
   paymentMethod: string;
   tradingWith: User;
+  hash: string;
 }
 
 export interface IStateProps {
-  isFetching: boolean;
   messages: Message[];
 }
 
