@@ -1,7 +1,8 @@
 import {
   UserState,
   UserActionTypes,
-  READ_CHAT
+  READ_CHAT,
+  UPDATE_UNREAD_CHATS
 } from './types';
 
 // Let's assume user is logged in for the sake of test task
@@ -30,6 +31,17 @@ export function activeUserReducer(
           ...state,
           undreadTradeChats: state.undreadTradeChats.filter(chatId => chatId !== action.chatId)
         }
+      }
+
+      case UPDATE_UNREAD_CHATS: {
+        if(state.undreadTradeChats.includes(action.chatId)) {
+          return state
+        }
+        return {
+          ...state,
+          undreadTradeChats: [...state.undreadTradeChats, action.chatId]
+        }
+        
       }
 
       default:

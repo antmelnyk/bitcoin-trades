@@ -16,6 +16,7 @@ export interface FetchChatAction {
 
 export interface UpdateChatAction {
   type: typeof UPDATE_CHAT;
+  id: number;
   messages: Message[];
   activeUser: {
     id: number;
@@ -55,6 +56,7 @@ export type ClearChatActionCreator = ThunkAction<Promise<ClearChatAction>, Appli
 
 // State types
 export interface ChatState {
+  id: number | null
   isFetching: boolean;
   isSending: boolean;
   messages: Message[];

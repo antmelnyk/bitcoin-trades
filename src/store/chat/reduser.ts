@@ -2,14 +2,13 @@ import {
   ChatState,
   ChatActionTypes,
   SEND_MESSAGE,
-  RECEIVE_MESSAGE,
   FETCH_CHAT,
   UPDATE_CHAT,
   CLEAR_CHAT,
-  READ_CHAT
 } from './types';
 
 const initialState: ChatState = {
+  id: null,
   isFetching: false,
   isSending: false,
   messages: [],
@@ -40,6 +39,7 @@ export function chatReducer(
     case UPDATE_CHAT: {
       return {
         ...state,
+        id: action.id,
         messages: action.messages,
         activeUser: action.activeUser,
         tradingWith: action.tradingWith,

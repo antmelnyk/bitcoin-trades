@@ -2,6 +2,7 @@
 // Please do not change this file!
 interface CssExports {
   'action-send-message': string;
+  'action-send-message-other': string;
   'form': string;
   'input': string;
 }

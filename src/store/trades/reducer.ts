@@ -52,8 +52,10 @@ export function tradesReducer(
     }
 
     case DELETE_TRADE: {
-      // Something happens
-      return state
+      return {
+        ...state,
+        list: state.list.filter(trade => trade.hash != action.hash)
+      }
     }
 
     case RELEASE_BITCOIN: {

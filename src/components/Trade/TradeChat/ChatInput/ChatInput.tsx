@@ -13,6 +13,13 @@ const ChatInput: React.FC<IProps> = (props: IProps) => {
     }
   }
 
+  function handleOtherPersonMessageSend(event: React.FormEvent<HTMLButtonElement>) {
+    if (input.trim() != '') {
+      props.actions.sendMessage(input, props.tradingWithId);
+      setInput('');
+    }
+  }
+
   return (
     <form onSubmit={handleMessageSending} styleName='form'>
       <input 
@@ -22,6 +29,9 @@ const ChatInput: React.FC<IProps> = (props: IProps) => {
         styleName='input' 
       />
       <input type='submit' value='SEND' styleName='action-send-message' />
+      <button onClick={handleOtherPersonMessageSend} type='button' styleName='action-send-message-other'>
+        SEND AS OTHER PERSON
+      </button>
     </form>
   )
 
