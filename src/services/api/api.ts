@@ -20,7 +20,7 @@ export default class API {
     })
   }
 
-  static fetchChat(id: number): Promise<{ id: number, messages: Message[]}> {
+  static fetchChat(id: number): Promise<{ id: number, messages: Message[], activeUser: { id: number; avatar: string; }, tradingWith: { id: number; avatar: string; }}> {
     return new Promise(resolve => {
       setTimeout(() => { resolve(chatData.find(chat => chat.id == id)) }, this.requestTime);
     })

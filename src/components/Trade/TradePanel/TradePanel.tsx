@@ -20,7 +20,7 @@ const TradePanel: React.FC<IProps> = (props: IProps) => {
         You are trading with <span styleName='trading-with'>{tradingWith.login}</span>
       </div>
       <div styleName='time'>
-        Started {moment(createdAt, "YYYYMMDD").fromNow()}
+        Started {moment(createdAt, 'YYYYMMDD').fromNow()}
       </div>
       <button onClick={handleBitcoinRelease} styleName='action-release-cryptocurrency'>
         Release bitcoins

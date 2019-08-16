@@ -31,7 +31,9 @@ export const fetchChat: ActionCreator<FetchChatActionCreator> = (chatId: number)
 
     const updateChat: UpdateChatAction = {
       type: UPDATE_CHAT,
-      messages: chat.messages
+      messages: chat.messages,
+      activeUser: chat.activeUser,
+      tradingWith: chat.tradingWith
     };
     return dispatch(updateChat);
 

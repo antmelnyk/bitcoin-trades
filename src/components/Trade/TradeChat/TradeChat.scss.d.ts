@@ -3,6 +3,7 @@
 interface CssExports {
   'action-delete-trade': string;
   'chat-header': string;
+  'messages': string;
   'payment-method': string;
   'reputation-negative': string;
   'reputation-positive': string;

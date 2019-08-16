@@ -16,6 +16,14 @@ export interface FetchChatAction {
 export interface UpdateChatAction {
   type: typeof UPDATE_CHAT;
   messages: Message[];
+  activeUser: {
+    id: number;
+    avatar: string;
+  }
+  tradingWith: {
+    id: number;
+    avatar: string;
+  }
 }
 
 export interface SendMessageAction {
@@ -43,6 +51,14 @@ export interface ChatState {
   isSending: boolean;
   messages: Message[];
   input: string;
+  activeUser: {
+    id: number | null;
+    avatar: string | null;
+  }
+  tradingWith: {
+    id: number | null;
+    avatar: string | null;
+  }
 }
 
 export interface Message {

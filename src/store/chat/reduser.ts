@@ -11,6 +11,14 @@ const initialState: ChatState = {
   isFetching: false,
   isSending: false,
   messages: [],
+  activeUser: {
+    id: null,
+    avatar: null
+  },
+  tradingWith: {
+    id: null,
+    avatar: null
+  },
   input: ''
 }
 
@@ -27,7 +35,9 @@ export function chatReducer(
     case UPDATE_CHAT: {
       return {
         ...state,
-        messages: action.messages
+        messages: action.messages,
+        activeUser: action.activeUser,
+        tradingWith: action.tradingWith
       }
     }
 
