@@ -8,9 +8,7 @@ import CSSModules from 'react-css-modules';
 import styles from './TradesPage.scss';
 
 const TradesPage: React.FC<RouteComponentProps<any>> = (props: RouteComponentProps<any>) => {
-  
-  console.log(props.match.params);
-  
+    
   return (
     <div className='page'>
 

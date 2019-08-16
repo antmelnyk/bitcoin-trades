@@ -73,7 +73,7 @@ const TradePanel: React.FC<IProps> = (props: IProps) => {
             Amount {cryptocurrency}
           </div>
           <div styleName='block-amount-cryptocurrency-value'>
-            {cryptocurrencyAmount}
+            {cryptocurrencyAmount.toFixed(7)}
           </div>
         </div>
       </div>

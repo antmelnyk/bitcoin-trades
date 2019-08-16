@@ -49,8 +49,6 @@ export const sendMessage: ActionCreator<SendMessageActionCreator> = (message: st
     
     const chatId = getState().chat.id;
     const activeUser = getState().activeUser;
-
-    console.log(chatId);
     
     // Update notifications only if message is not from active user
     if (chatId != null && activeUser && activeUser.id != authorId) {

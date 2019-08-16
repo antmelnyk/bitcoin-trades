@@ -27,7 +27,7 @@ const TradeItem: React.FC<IProps> = (props: IProps) => {
               {Math.round(currencyAmount)} {currency}
             </span>
             <span>
-              ({cryptocurrencyAmount} {cryptocurrency})
+              ({cryptocurrencyAmount.toFixed(7)} {cryptocurrency})
             </span>
           </div>
         </div>

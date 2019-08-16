@@ -8,9 +8,18 @@ import { tradesData, chatData } from './data';
 export default class API {
   static requestTime: number = 1000;
 
-  static fetchTrades() : Promise<Trade[]> {    
+  static async fetchTrades() : Promise<Trade[]> {
+
+    const data = await http('https://api.coindesk.com/v1/bpi/currentprice/USD.json');
+    
     return new Promise(resolve => {
-      setTimeout(() => { resolve(tradesData) }, this.requestTime);
+      tradesData.forEach(async (trade, index, array) => { 
+        array[index].cryptocurrencyAmount = array[index].currencyAmount / data.bpi.USD.rate_float
+      })
+      
+      setTimeout(() => {
+        resolve(tradesData)
+      }, this.requestTime);
     })
   }
 
@@ -24,6 +33,15 @@ export default class API {
     return new Promise(resolve => {
       setTimeout(() => { resolve(chatData.find(chat => chat.id == id)) }, this.requestTime);
     })
-  }
-
+  } 
 }
+
+const http = async (request: RequestInfo): Promise<any> => {
+  return new Promise(resolve => {
+    fetch(request)
+      .then(response => response.json())
+      .then(body => {
+        resolve(body);
+      });
+  });
+};
