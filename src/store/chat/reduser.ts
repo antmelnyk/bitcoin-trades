@@ -5,7 +5,8 @@ import {
   RECEIVE_MESSAGE,
   FETCH_CHAT,
   UPDATE_CHAT,
-  CLEAR_CHAT
+  CLEAR_CHAT,
+  READ_CHAT
 } from './types';
 
 const initialState: ChatState = {
@@ -57,11 +58,11 @@ export function chatReducer(
         }]
       }
     }
-
     
     case CLEAR_CHAT: {
       return initialState;
     }
+
 
     default:
       return state

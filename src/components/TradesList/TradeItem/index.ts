@@ -1,2 +1,2 @@
-import TradeItem from './TradeItem'
+import TradeItem from './TradeItem.container'
 export default TradeItem

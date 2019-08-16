@@ -1,7 +1,12 @@
 import { Trade } from '../../../store/trades/types';
 
-export interface IStateProps {
+
+export interface IOwnProps {
   trade: Trade;
 }
 
-export type IProps = IStateProps
+export interface IStateProps {
+  unreadTradeChats: number[];
+}
+
+export type IProps = IStateProps & IOwnProps

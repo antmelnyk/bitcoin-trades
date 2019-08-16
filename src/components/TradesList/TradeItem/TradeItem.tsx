@@ -4,18 +4,15 @@ import { IProps } from './types';
 
 import UserAvatar from '../../UserAvatar';
 
-import CSSModules from 'react-css-modules';
-import styles from './TradeItem.scss';
-
 const TradeItem: React.FC<IProps> = (props: IProps) => {
 
   const { tradingWith, tradeStatus, paymentMethod, currencyAmount, 
-    currency, cryptocurrencyAmount, cryptocurrency, paidStatus, chatNotification, hash } = props.trade;
+    currency, cryptocurrencyAmount, cryptocurrency, paidStatus, chatId, hash } = props.trade;
   
   return (
     <Link to={`/trades/${hash}`} styleName='link'>
       <div styleName='trade-item'>
-        <div styleName={`trade-chat-notification-${chatNotification ? 'unread' : 'read'}`}>
+        <div styleName={`trade-chat-notification-${props.unreadTradeChats.includes(chatId) ? 'unread' : 'read'}`}>
         </div>
         <div styleName='trade-info'>
           <div styleName='trading-with-status'>
@@ -45,4 +42,4 @@ const TradeItem: React.FC<IProps> = (props: IProps) => {
   )
 }
 
-export default CSSModules(TradeItem, styles)
+export default TradeItem

@@ -1,12 +1,17 @@
-// Actions types
-export const SET_ACTIVE_USER = 'SET_ACTIVE_USER'
+import { ThunkAction } from 'redux-thunk';
+import { ApplicationState } from '../configureStore';
 
-interface SetActiveUserAction {
-  type: typeof SET_ACTIVE_USER,
-  activeUser: User
+// Actions types
+export const READ_CHAT = 'READ_CHAT'
+
+export interface ReadChatAction {
+  type: typeof READ_CHAT;
+  chatId: number;
 }
 
-export type UserActionTypes = SetActiveUserAction;
+export type UserActionTypes = ReadChatAction;
+
+export type ReadChatActionCreator = ThunkAction<Promise<ReadChatAction>, ApplicationState, null, ReadChatAction>
 
 // State types
 export type UserState = User & ActiveUser | null;
@@ -21,5 +26,5 @@ export interface User {
 }
 
 export interface ActiveUser {
-  undreadTradeChats: number[];
+  undreadTradeChats: number[]; // Trade chats ids where chatNotification is true
 }

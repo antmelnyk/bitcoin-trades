@@ -21,7 +21,6 @@ import {
 
 import {
   ClearChatAction,
-  ClearChatActionCreator,
   CLEAR_CHAT
 } from '../chat/types';
 
@@ -45,7 +44,6 @@ export const fetchTrades: ActionCreator<FetchTradesActionCreator> = () => {
 
   }
 }
-
 
 export const fetchTrade: ActionCreator<FetchTradeActionCreator> = (hash: string) => {
   return async (dispatch: Dispatch) => {

@@ -11,6 +11,7 @@ const TradeChat: React.FC<IProps> = (props: IProps) => {
   
   useEffect(() => {
     props.actions.fetchChat(chatId);
+    props.actions.readChat(chatId);
   }, []);
 
   function handleTradeDeleting() {

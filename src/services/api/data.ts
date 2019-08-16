@@ -39,7 +39,7 @@ export const tradesData: Trade[] = [
     cryptocurrency: 'BTC',
     cryptocurrencyAmount: 0.00094,
     chatId: 1,
-    chatNotification: false,
+    chatNotification: true,
     createdAt: new Date('August 13, 2019 20:22:25'),
     hash: '43j341s'
   }

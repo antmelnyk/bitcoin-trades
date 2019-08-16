@@ -1,6 +1,5 @@
 import { ThunkAction } from 'redux-thunk';
 import { ApplicationState } from '../configureStore';
-import { User } from '../users/types';
 
 // Actions types
 export const FETCH_CHAT = 'FETCH_CHAT'
@@ -8,6 +7,7 @@ export const UPDATE_CHAT = 'UPDATE_CHAT'
 export const SEND_MESSAGE = 'SEND_MESSAGE'
 export const RECEIVE_MESSAGE = 'RECEIVE_MESSAGE'
 export const CLEAR_CHAT = 'CLEAR_CHAT'
+export const READ_CHAT = 'READ_CHAT'
 
 export interface FetchChatAction {
   type: typeof FETCH_CHAT;
