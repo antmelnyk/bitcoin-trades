@@ -1,3 +1,5 @@
+@import 'variables';
+
 html {
   height: 100%;
   font-family: 'Lato', sans-serif;
@@ -15,5 +17,9 @@ body {
     display: flex;
     max-width: 1200px;
     margin: 0 auto;
+
+    @media screen and (max-width: $mobile-view){
+      flex-direction: column;
+    }
   }
 }

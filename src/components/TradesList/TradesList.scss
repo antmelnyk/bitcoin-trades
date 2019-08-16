@@ -1,7 +1,27 @@
+@import '../../../assets/variables';
+
 .trades-list {
   position: sticky;
   top: 0;
   width: 320px;
   height: 100vh;
   background: white;
+}
+
+.trades-fetching {
+  width: 100%;
+  text-align: center;
+  padding: 50px 0;
+}
+
+@media screen and (max-width: $mobile-view){
+  .trades-list {
+    order: 0;
+    position: relative;
+    height: auto;
+    width: auto;
+    overflow-y: auto;
+    box-shadow: inset 0 -10px 10px -10px #0000009e;
+    max-height: 160px;
+  }
 }

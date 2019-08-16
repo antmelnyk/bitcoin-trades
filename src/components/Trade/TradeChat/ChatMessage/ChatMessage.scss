@@ -63,3 +63,9 @@
 .message-avatar {
   flex-shrink: 0;
 }
+
+@media screen and (max-width: $mobile-view) {
+  .chat-message {
+    padding: 15px 0;
+  }
+}

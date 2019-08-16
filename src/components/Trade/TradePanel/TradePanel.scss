@@ -112,3 +112,14 @@
 .block-amount-cryptocurrency-value, .block-hash-value {
   color: $light-grey;
 }
+
+@media screen and (max-width: $mobile-view) {
+  .trade-info {
+    order: 1;
+    position: relative;
+    width: 100%;
+    top: auto;
+    height: auto;
+    padding-bottom: 30px;
+  }
+}

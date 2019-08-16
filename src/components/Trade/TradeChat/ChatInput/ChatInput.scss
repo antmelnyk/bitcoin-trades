@@ -38,3 +38,10 @@
   font-size: 18px;
   cursor: pointer;
 }
+
+@media screen and (max-width: $mobile-view){
+  .form {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
