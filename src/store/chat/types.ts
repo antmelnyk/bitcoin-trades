@@ -7,6 +7,7 @@ export const FETCH_CHAT = 'FETCH_CHAT'
 export const UPDATE_CHAT = 'UPDATE_CHAT'
 export const SEND_MESSAGE = 'SEND_MESSAGE'
 export const RECEIVE_MESSAGE = 'RECEIVE_MESSAGE'
+export const CLEAR_CHAT = 'CLEAR_CHAT'
 
 export interface FetchChatAction {
   type: typeof FETCH_CHAT;
@@ -32,6 +33,10 @@ export interface SendMessageAction {
   authorId: number;
 }
 
+export interface ClearChatAction {
+  type: typeof CLEAR_CHAT;
+}
+
 export interface ReceiveMessageAction {
   type: typeof RECEIVE_MESSAGE;
 }
@@ -39,11 +44,14 @@ export interface ReceiveMessageAction {
 export type ChatActionTypes = 
   FetchChatAction |
   UpdateChatAction |
+  ClearChatAction |
   SendMessageAction |
   ReceiveMessageAction;
 
 export type FetchChatActionCreator = ThunkAction<Promise<UpdateChatAction>, ApplicationState, null, UpdateChatAction>
 export type SendMessageActionCreator = ThunkAction<Promise<SendMessageAction>, ApplicationState, null, SendMessageAction>
+export type ClearChatActionCreator = ThunkAction<Promise<ClearChatAction>, ApplicationState, null, ClearChatAction>
+
 
 // State types
 export interface ChatState {

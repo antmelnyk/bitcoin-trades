@@ -8,6 +8,7 @@ export interface IOwnProps {
 
 export interface IStateProps {
   messages: Message[];
+  isFetching: boolean;
 }
 
 export interface IDispatchProps {

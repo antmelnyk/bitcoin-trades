@@ -6,7 +6,7 @@ import { tradesData, chatData } from './data';
  * Mocking calls to backend API
  */
 export default class API {
-  static requestTime: number = 400;
+  static requestTime: number = 1000;
 
   static fetchTrades() : Promise<Trade[]> {    
     return new Promise(resolve => {

@@ -3,7 +3,7 @@ import moment from 'moment';
 import { IProps } from './types';
 import UserAvatar from '../../../UserAvatar';
 
-const Trade: React.FC<IProps> = (props: IProps) => {
+const ChatMessage: React.FC<IProps> = (props: IProps) => {
   
   if(props.message && props.avatar) {
     return (
@@ -30,4 +30,4 @@ const Trade: React.FC<IProps> = (props: IProps) => {
 
 }
 
-export default Trade
+export default ChatMessage

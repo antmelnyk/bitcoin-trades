@@ -1,10 +1,12 @@
+@import '../../../assets/variables';
+
 .spinner {
   display: inline-block;
   width: 50px;
   height: 50px;
   border: 3px solid rgba(255, 255, 255, .25);
   border-radius: 50%;
-  border-top-color: white;
+  border-top-color: $accent-color;
   animation: spin 1s ease-in-out infinite;
 }
 

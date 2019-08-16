@@ -4,7 +4,8 @@ import {
   SEND_MESSAGE,
   RECEIVE_MESSAGE,
   FETCH_CHAT,
-  UPDATE_CHAT
+  UPDATE_CHAT,
+  CLEAR_CHAT
 } from './types';
 
 const initialState: ChatState = {
@@ -29,7 +30,10 @@ export function chatReducer(
   switch (action.type) {
 
     case FETCH_CHAT: {
-      return state;
+      return {
+        ...state,
+        isFetching: true
+      };
     }
 
     case UPDATE_CHAT: {
@@ -37,20 +41,26 @@ export function chatReducer(
         ...state,
         messages: action.messages,
         activeUser: action.activeUser,
-        tradingWith: action.tradingWith
+        tradingWith: action.tradingWith,
+        isFetching: false
       }
     }
 
     case SEND_MESSAGE: {
       return {
-        ...state
+        ...state,
+        messages: [...state.messages, {
+          id: state.messages.length,
+          text: action.message,
+          date: new Date(),
+          authorId: action.authorId
+        }]
       }
     }
 
-    case RECEIVE_MESSAGE: {
-      return {
-        ...state
-      }
+    
+    case CLEAR_CHAT: {
+      return initialState;
     }
 
     default:

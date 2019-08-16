@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import { IProps } from './types';
+
 import ChatMessage from './ChatMessage';
+import ChatInput from './ChatInput';
+import Spinner from '../../Spinner';
 
 const TradeChat: React.FC<IProps> = (props: IProps) => {
 
@@ -14,8 +17,9 @@ const TradeChat: React.FC<IProps> = (props: IProps) => {
     props.actions.deleteTrade(hash);
   }
 
-  return (    
+  return (
     <div styleName='trade-chat'>
+
       <div styleName='chat-header'>
         <button onClick={handleTradeDeleting} styleName='action-delete-trade'></button>
         <div styleName='payment-method'>
@@ -30,10 +34,16 @@ const TradeChat: React.FC<IProps> = (props: IProps) => {
       </div>
 
       <div styleName='messages'>
+
+        <Spinner isSpinning={props.isFetching} />
+
         {props.messages.map(message =>
           <ChatMessage messageId={message.id} key={message.id} />
         )}
+        
       </div>
+
+      <ChatInput />
     </div>
   )
   

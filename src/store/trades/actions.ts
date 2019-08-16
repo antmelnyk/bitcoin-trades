@@ -19,6 +19,12 @@ import {
   RELEASE_BITCOIN
 } from './types';
 
+import {
+  ClearChatAction,
+  ClearChatActionCreator,
+  CLEAR_CHAT
+} from '../chat/types';
+
 import API from '../../services/api/api';
 
 export const fetchTrades: ActionCreator<FetchTradesActionCreator> = () => {
@@ -43,6 +49,11 @@ export const fetchTrades: ActionCreator<FetchTradesActionCreator> = () => {
 
 export const fetchTrade: ActionCreator<FetchTradeActionCreator> = (hash: string) => {
   return async (dispatch: Dispatch) => {
+    
+    const clearChat: ClearChatAction = {
+      type: CLEAR_CHAT
+    };
+    dispatch(clearChat);
     
     const fetchTrade: FetchTradeAction = {
       type: FETCH_TRADE
